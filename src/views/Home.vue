@@ -1,18 +1,32 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img class="animate__animated animate__flipInY" alt="Vue logo" src="../assets/logo.png" />
+    <HelloWorld msg="Hi, my name is Ing. Adrián Stosil. I'm the Developer you need!" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
     HelloWorld
   }
-}
+};
 </script>
+
+<style lang="scss" scoped>
+@import '../main.scss';
+
+img {
+  margin-top: 10em;
+}
+
+@media screen and (max-width: 593px) {
+  img {
+    margin-top: 1.5em;
+  }
+}
+</style>

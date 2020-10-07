@@ -1,27 +1,63 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
 
-Vue.use(VueRouter)
+// views
+import Home from "../views/Home.vue";
+import About from "../views/About.vue";
+import Skills from "../views/Skills.vue";
+import Experience from "../views/Experience.vue";
+import Education from "../views/Education.vue";
+import Portfolio from "../views/Portfolio.vue";
+import Gallery from "../views/Gallery.vue";
+//import Contact from "../views/Contact.vue";
+
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
+    path: "/",
+    name: "Home",
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
-]
+    path: "/about",
+    name: "About",
+    component: About
+  },
+  {
+    path: "/skills",
+    name: "Skills",
+    component: Skills
+  },
+  {
+    path: "/experience",
+    name: "Experience",
+    component: Experience
+  },
+  {
+    path: "/education",
+    name: "Education",
+    component: Education
+  },
+  {
+    path: "/portfolio",
+    name: "Portfolio",
+    component: Portfolio
+  },
+  {
+    path: "/gallery",
+    name: "Gallery",
+    component: Gallery
+  },
+  {
+    path: "/contact",
+    name: "Contact",
+    component: () => import(/* webpackChunkName: "contact" */'../views/Contact.vue')
+  },
+];
 
 const router = new VueRouter({
   routes
-})
+});
 
-export default router
+export default router;

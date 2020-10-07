@@ -4,10 +4,10 @@
 
           <h2 class="name">Ing. Adrian Stosil</h2><hr style="width: 250px"><br/>
 
-          <h4>Tatranska Lomnica 125</h4>
+          <!-- <h4>Tatranska Lomnica 125</h4>
           <h4>Vysoke Tatry, Slovakia</h4><br />
           <h4>+421 908 400 734</h4><br />
-          <h4><a href="gmail: ado19960@gmail.com">ado19960@gmail.com</a></h4>
+          <h4><a href="gmail: ado19960@gmail.com">ado19960@gmail.com</a></h4> -->
 
 
 

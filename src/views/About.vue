@@ -1,11 +1,11 @@
 <template>
     <div class="about">
-        <h1 class="title">About me</h1>
+        <!-- <h1 class="title">About me</h1>
         <img src="../assets/profile.jpg" alt="">
         <p class="text">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi neque, ipsa animi maiores repellendu distinctioaperiam earum dolor voluptatum consequatur blanditiis inventore debitis fuga numquam voluptate architecto itaque molestiae.
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi neque, ipsa animi maiores repellendu distinctioaperiam earum dolor voluptatum consequatur blanditiis inventore debitis fuga numquam voluptate architecto itaque molestiae.
-        </p>
+        </p> -->
     </div>
 </template>
 

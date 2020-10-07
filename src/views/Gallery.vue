@@ -1,6 +1,6 @@
 <template>
      <div class="gallery">
-          <img v-for="(img, index) in images" :key="index" :src="img" alt="arg">
+          <!-- <img v-for="(img, index) in images" :key="index" :src="img" alt="arg"> -->
      </div>
 </template>
 

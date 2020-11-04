@@ -1,0 +1,74 @@
+.card {
+    margin: 3.5em 2em auto;
+	padding: 0;
+	display: flex;
+    justify-content: center;
+    align-content: flex-start;
+	background: transparent;
+    border: none;
+    
+}
+.time {
+    background-color: $red;
+    width: 120px;
+    height: 120px;
+    color: $white;
+    border-radius: 60px;
+    z-index: -1;
+    //animation-duration: 2s;
+    //animation-name: rollleft;
+}
+/* @keyframes rollleft {
+    from {
+        margin-left: -10%;
+        transform: rotate(0deg)
+    }
+                        
+    to {
+        margin-left: 0%;
+        transform: rotate(360deg)
+    }
+} */
+
+.school {
+    background-color: #eee;
+    color: $blue;
+    text-align: left;
+    width: 90%;
+    max-width: 500px;
+    padding: 0 35px;
+    clip-path: polygon(3% 40%, 3% 0, 100% 0, 100% 100%, 3% 100%, 3% 60%, 0% 50%);
+    -webkit-clip-path: polygon(3% 40%, 3% 0, 100% 0, 100% 100%, 3% 100%, 3% 60%, 0% 50%);
+}
+p {
+    margin-top: 40px;
+    padding: 0;
+}
+strong {
+    font-size: 22px;
+    color: $white;
+}
+h2 {
+    margin-top: 1em;
+    margin-bottom: 12px;
+    color: $red;
+    font-size: 1.2em;
+}
+h3 {
+    margin: 0 0 4px 0;
+    font-size: 1em;
+}
+
+@media screen and (max-width: 593px) {
+    .card {
+        display: flex;
+        flex-direction: column;
+        margin-top:20px ;
+    }
+    .school {
+        padding: 20px;
+    }
+    h2 {
+        margin-top: 0;
+    }
+}

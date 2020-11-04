@@ -1,8 +1,11 @@
 <template>
-  <div class="home">
-    <img class="animate__animated animate__flipInY" alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Hi, my name is Ing. Adrián Stosil. I'm the Developer you need!" />
-  </div>
+    <div class="home">
+
+        <img class="animate__animated animate__flipInY" alt="Vue logo" src="../assets/logo.png" />
+
+        <HelloWorld /> 
+
+    </div>
 </template>
 
 <script>
@@ -10,10 +13,10 @@
 import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
-  name: "Home",
-  components: {
-    HelloWorld
-  }
+    name: "Home",
+    components: {
+        HelloWorld
+    }
 };
 </script>
 
@@ -21,12 +24,12 @@ export default {
 @import '../main.scss';
 
 img {
-  margin-top: 10em;
+    margin-top: 10em;
 }
 
 @media screen and (max-width: 593px) {
-  img {
-    margin-top: 1.5em;
-  }
+    img {
+        margin-top: 1.5em;
+    }
 }
 </style>

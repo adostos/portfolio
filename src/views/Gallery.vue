@@ -1,21 +1,25 @@
 <template>
      <div class="gallery">
-          <!-- <img v-for="(img, index) in images" :key="index" :src="img" alt="arg"> -->
+          <the-title :title="titles" />
+          <card-gal />
      </div>
 </template>
 
 <script>
+import TheTitle from '../components/TheTitle'
+import CardGal from '../components/CardGal'
+
      export default {
+          components: {
+               TheTitle,
+               CardGal
+          },
           data() {
                return {
-                    images: [
-                         'https://static.pexels.com/photos/52500/horse-herd-fog-nature-52500.jpeg',
-                         "https://static.pexels.com/photos/66898/elephant-cub-tsavo-kenya-66898.jpeg",
-                         "https://static.pexels.com/photos/213399/pexels-photo-213399.jpeg",
-                         "https://static.pexels.com/photos/158471/ibis-bird-red-animals-158471.jpeg",
-                         "https://static.pexels.com/photos/133459/pexels-photo-133459.jpeg",
-                         "https://static.pexels.com/photos/50988/ape-berber-monkeys-mammal-affchen-50988.jpeg"
-                    ]
+                    titles: {
+                         view: 'Gallery',
+                         description: 'Showcase of my latest works'
+                    },
                }
           },
           computed: {
@@ -29,8 +33,12 @@
 <style lang="scss" scoped>
 @import '../main.scss';
 
-.gallery {
-     margin-top: 70px;
+.buts {
+     margin: 10px;
+     text-align: center;
+}
+ul {
+     list-style: none;
 }
 img {
      display: inline-flex;

@@ -1,5 +1,6 @@
 <template>
      <div class="main animate__animated animate__fadeIn">
+          <the-title :title="titles" />
           <ul>
                <progress-bar-list :value="valuee"></progress-bar-list>
           </ul>
@@ -8,18 +9,23 @@
 </template>
 
 <script>
-
-import ProgressBarList from "../components/ProgressBarList.vue"
-import Teach from "../components/Teach.vue"
+import ProgressBarList from "../components/skills/ProgressBarList.vue"
+import Teach from "../components/skills/Teach.vue"
+import TheTitle from "../components/TheTitle"
 
      export default {
           components: {
                ProgressBarList,
                Teach,
+               TheTitle
           },
           data() {
                return {
-                    valuee: []
+                    valuee: [],
+                    titles: {
+                         view: 'Technical skills',
+                         description: 'But my goal is to be better'
+                    }
                }
           },
      }
@@ -30,12 +36,14 @@ import Teach from "../components/Teach.vue"
 
 ul {
      margin: 0;
-     padding: 0;
+     padding-top: 10px;
      list-style: none;
 }
+
 li {
-     margin-top: 50px;
+     margin-top: 30px;
 }
+
 @media screen and (max-width: 593px) {
      li {
           margin: 10px auto;

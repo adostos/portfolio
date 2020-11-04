@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>SnakeGame</title>
+</head>
+<body>
+    <canvas width="600" height="600"></canvas>
+    <br>
+    <p class="record_score">Record score:</p> 
+    <h3>0</h3>
+    <h1>0</h1>
+
+    <div class="walls">
+        <p>WALLS:</p>
+        <button id="on" onclick="wallsOn()">ON</button>
+        <button id="off" onclick="wallsOff()">OFF</button>
+    </div>
+    <div class="speed">
+        <button id="slow" onclick="slowSpeed()">Slow</button>
+        <button id="normal" onclick="normalSpeed()">Normal</button>
+        <button id="fast" onclick="fastSpeed()">Fast</button>
+    </div>
+
+
+    <script>
+        // listeners
+        document.addEventListener("keydown", keyPush);
+
+        // canvas
+        const canvas = document.querySelector("canvas");
+        const title = document.querySelector("h1");
+        const ctx = canvas.getContext("2d");
+        
+        // game
+        let gameIsRunning = true;
+        const tileSize = 50;
+        const tileCountX = canvas.width / tileSize;
+        const tileCountY = canvas.height / tileSize;
+        let score = 0;
+        
+        // record score
+        const record = document.querySelector("h3");
+        record.innerHTML = localStorage.getItem('record');
+        
+        // on/off walls
+        let walls = 0;
+        walls = localStorage.getItem('walls');
+        const walls_on = document.getElementById('on');
+        const walls_off = document.getElementById('off');
+
+        // speed
+        let fps = 12;
+        fps = localStorage.getItem('speed')
+        // set speed
+        const slow = document.querySelector("#slow");
+        const normal = document.querySelector("#normal");
+        const fast = document.querySelector("#fast");
+        const slow_speed = 7;
+        const normal_speed = 12;
+        const fast_speed = 17;
+
+        // player
+        let snakeSpeed = tileSize;
+        let snakePosX = 0;
+        let snakePosY = canvas.height / 2;
+
+        let velocityX = 1;
+        let velocityY = 0;
+
+        // snake
+        let tail = [];
+        let snakeLength = 2;
+
+        // food
+        let foodPosX = 0;
+        let foodPosY = 0;
+
+        // loop
+        function gameLoop() {
+            if (gameIsRunning) {
+                drawStuff();  
+                setTimeout(moveStuff, 1000);
+                //moveStuff();
+                setTimeout(gameLoop, 1000 / fps);
+            }
+        }
+
+        resetFood();
+        gameLoop();
+
+        // settings speed
+        if (localStorage.getItem('speed') == slow_speed) {
+            slow.classList.add("active_speed")
+        } else if (localStorage.getItem('speed') == normal_speed) {
+            normal.classList.add("active_speed")
+        } else {
+            fast.classList.add("active_speed")
+        };
+
+        function slowSpeed() {
+            localStorage.setItem('speed', slow_speed)
+            slow.classList.add("active_speed")
+            normal.classList.remove("active_speed")
+            fast.classList.remove("active_speed")
+        };
+        function normalSpeed() {
+            localStorage.setItem('speed', normal_speed)
+            slow.classList.remove("active_speed")
+            normal.classList.add("active_speed")
+            fast.classList.remove("active_speed")
+        };
+        function fastSpeed() {
+            localStorage.setItem('speed', fast_speed)
+            slow.classList.remove("active_speed")
+            normal.classList.remove("active_speed")
+            fast.classList.add("active_speed")
+        };
+
+        // walls on/off
+        if (localStorage.getItem('walls') == 1) {
+            on.classList.add("active_speed")
+        } else {
+            off.classList.add("active_speed")
+        };
+        function wallsOn() {
+            localStorage.setItem('walls', 1)
+            on.classList.add("active_speed")
+            off.classList.remove("active_speed")
+        }
+        function wallsOff() {
+            localStorage.setItem('walls', 0)
+            on.classList.remove("active_speed")
+            off.classList.add("active_speed")
+        }
+
+        /**
+         * MOVE EVERYTHING
+         */
+        function moveStuff() {
+            snakePosX += snakeSpeed * velocityX;
+            snakePosY += snakeSpeed * velocityY;
+
+            // wall collision
+            if (walls == 1) {
+                // wall collision - true
+                if (snakePosX > canvas.width - tileSize) {
+                    gameOver();
+                }
+                if (snakePosX < 0) {
+                    gameOver();
+                }
+                if (snakePosY > canvas.height - tileSize) {
+                    gameOver();
+                }
+                if (snakePosY < 0) {
+                    gameOver();
+                }
+            } else {
+                // wall collision - true
+                if (snakePosX > canvas.width - tileSize) {
+                    snakePosX = 0;
+                }
+                if (snakePosX < 0) {
+                    snakePosX = canvas.width;
+                }
+                if (snakePosY > canvas.height - tileSize) {
+                    snakePosY = 0;
+                }
+                if (snakePosY < 0) {
+                    snakePosY = canvas.height;
+                }
+            }
+
+            // GAME OVER (crash into myself)
+            tail.forEach((snakePart) => {
+                if (snakePosX === snakePart.x && snakePosY === snakePart.y) {
+                    gameOver();
+                }
+            });
+
+            // tail
+            tail.push({ x: snakePosX, y: snakePosY });
+
+            // forget earliest parts of snake
+            tail = tail.slice(-1 * snakeLength);
+
+            // food collision
+            if (snakePosX === foodPosX && snakePosY === foodPosY) {
+                title.textContent = ++score;
+                snakeLength++;
+                resetFood();
+            }
+        }
+
+        // draw all
+        function drawStuff() {
+            // background
+            rectangle("#34495e", 0, 0, canvas.width, canvas.height);
+
+            // grid
+            drawGrid();
+
+            // food
+            rectangle("#ff675f", foodPosX, foodPosY, tileSize - 1, tileSize - 1);
+
+            // tail
+            tail.forEach((snakePart) =>
+                rectangle("#38E095", snakePart.x, snakePart.y, tileSize - 1, tileSize - 1)
+            );
+
+            // snake
+            rectangle("#41b883", snakePosX, snakePosY, tileSize - 1, tileSize - 1);
+        }
+
+        // draw rectangle
+        function rectangle(color, x, y, width, height) {
+            ctx.fillStyle = color;
+            ctx.fillRect(x, y, width, height);
+        }
+
+        // randomize food position
+        function resetFood() {
+            // GAME OVER (nowhere to go)
+            if (snakeLength === tileCountX * tileCountY) {
+                gameOver();
+            }
+
+            foodPosX = Math.floor(Math.random() * tileCountX) * tileSize;
+            foodPosY = Math.floor(Math.random() * tileCountY) * tileSize;
+
+            // dont spawn food on snakes head
+            if (foodPosX === snakePosX && foodPosY === snakePosY) {
+                resetFood();
+            }
+
+            // dont spawn food on any snake part
+            if ( tail.some( snakePart => snakePart.x === foodPosX && snakePart.y === foodPosY ) ) {
+                resetFood();
+            }
+        }
+
+        // GAME OVER
+        // KEYBOARD restarts game
+        function gameOver() {
+            title.innerHTML = `<strong>Score: ${score} </strong> <p>*Press BACKSPACE for start the new game*</p> `;
+            if (score > localStorage.getItem('record')) {
+                localStorage.setItem('record', score);
+            }
+            gameIsRunning = false; 
+        }
+
+        // keyboard
+        function keyPush(event) {
+            switch (event.key) {
+                case "ArrowLeft":
+                    if (velocityX !== 1) {
+                        velocityX = -1;
+                        velocityY = 0;
+                    }
+                    break;
+                case "ArrowUp":
+                    if (velocityY !== 1) {
+                        velocityX = 0;
+                        velocityY = -1;
+                    }
+                    break;
+                case "ArrowRight":
+                    if (velocityX !== -1) {
+                        velocityX = 1;
+                        velocityY = 0;
+                    }
+                    break;
+                case "ArrowDown":
+                    if (velocityY !== -1) {
+                        velocityX = 0;
+                        velocityY = 1;
+                    }
+                    break;
+                default:
+                    // restart game
+                    if (!gameIsRunning) location.reload();  // refresh
+                    break;
+            }
+        }
+
+        // grid
+        function drawGrid() {
+            for (let i = 0; i < tileCountX; i++) {
+                for (let j = 0; j < tileCountY; j++) {
+                    rectangle("whitesmoke", tileSize * i, tileSize * j, tileSize - 1, tileSize - 1);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

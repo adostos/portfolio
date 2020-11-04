@@ -1,41 +1,50 @@
 <template>
-     <ul>
-         <li>
-          <education-card v-for="(item, index) in schools" :key="index" :item="item"></education-card>
-         </li>
-     </ul>
+    <div>
+        <the-title :title="titles" />
+        <ul>
+            <li>
+                <education-card v-for="(item, index) in schools" :key="index" :item="item"></education-card>
+            </li>
+        </ul>
+    </div>
 </template>
 
 <script>
 import EducationCard from '../components/EducationCard'
+import TheTitle from '../components/TheTitle'
 
      export default {
           components: {
-               EducationCard
+               EducationCard,
+               TheTitle
           },
           data() {
             return {
+                titles: {
+                         view: 'Educations & Diplomas',
+                         description: 'What I have done in my academic career'
+                },
                 schools: [
                     {
                         dateS: 2018,
                         dateE: 2020,
-                        school: 'Technická univerzita v Košiciach',
+                        school: 'Technical University in Košice',
                         faculty: 'Fakulta elektrotechniky a informatiky',
-                        section: 'Informatika - Telekomunikacie, Ing.'
+                        section: 'Informatics - Telecommunications, Ing.'
                     },
                     {
                         dateS: 2015,
                         dateE: 2018,
-                        school: 'Technická univerzita v Košiciach',
+                        school: 'Technical University in Košice',
                         faculty: 'Fakulta elektrotechniky a informatiky',
-                        section: 'Telekomunikacie, Bc.'
+                        section: 'Telecommunications, Bc.'
                     },
                     {
                         dateS: 2011,
                         dateE: 2015,
-                        school: 'Stredná odborná škola technická',
+                        school: 'Secondary vocational technical school',
                         faculty: 'Poprad, Kukučínova 483/12',
-                        section: 'Grafik digitálnych médií'
+                        section: 'Graphic designer of digital media'
                     }
                 ]
             }

@@ -7,7 +7,7 @@
 
 <script>
 import TheTitle from '../components/TheTitle'
-import CardGal from '../components/CardGal'
+import CardGal from '../components/gallery/CardGal'
 
      export default {
           components: {

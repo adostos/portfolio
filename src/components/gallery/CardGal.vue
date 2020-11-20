@@ -1,10 +1,13 @@
 <template>
-    <div class="slider animate__animated  animate__fadeIn">
+    <div class="slider animate__animated animate__fadeIn">
 
         <article class="images">
-            <!-- <img id="first" :src="this.images[this.valueFirst].image" alt="image1"> -->
-            <img id="main" @click.prevent="zoomImg" :src="this.images[this.value].image" alt="image2">
-            <!-- <img id="second" :src="this.images[this.valueSecond].image" alt="image3"> -->
+            <img
+                id="main"
+                @click.prevent="zoomImg"
+                :src="this.images[this.value].image"
+                alt="image2"
+            />
         </article>
             
         <span class="buttons">
@@ -17,7 +20,7 @@
 </template>
 
 <script>
-import TheSmallGallery from './gallery/TheSmallGallery'
+import TheSmallGallery from './TheSmallGallery'
 
     export default {
         components: {
@@ -28,14 +31,18 @@ import TheSmallGallery from './gallery/TheSmallGallery'
                 value: 1,
                 zoom: true,
                 images: [
-                    { id: 1, image: require('../assets/img/obr1.jpeg'), name: 'obr1' },
-                    { id: 2, image: require('../assets/img/obr2.jpeg'), name: 'obr2' },
-                    { id: 3, image: require('../assets/img/obr3.jpeg'), name: 'obr3' },
-                    { id: 4, image: require('../assets/img/obr4.jpeg'), name: 'obr4' },
-                    { id: 5, image: require('../assets/img/obr5.jpeg'), name: 'obr5' },
-                    { id: 6, image: require('../assets/img/obr6.jpeg'), name: 'obr6' },                    
+                    { id: 1, image: require('../../assets/img/bear.jpg'), name: 'obr1' },
+                    { id: 2, image: require('../../assets/img/bird.jpg'), name: 'obr2' },
+                    { id: 3, image: require('../../assets/img/eagle.jpg'), name: 'obr3' },
+                    { id: 4, image: require('../../assets/img/eye.jpg'), name: 'obr5' },
+                    { id: 5, image: require('../../assets/img/giraffe.jpg'), name: 'obr6' },                    
+                    { id: 6, image: require('../../assets/img/horse.jpg'), name: 'obr6' },                    
+                    { id: 7, image: require('../../assets/img/cheetah.jpg'), name: 'obr6' },                    
+                    { id: 8, image: require('../../assets/img/zebra.jpg'), name: 'obr6' },                    
+                    { id: 9, image: require('../../assets/img/eagle2.jpg'), name: 'obr4' },
+                    { id: 10, image: require('../../assets/img/wolf.jpg'), name: 'obr6' },                    
+                    { id: 11, image: require('../../assets/img/lion.jpg'), name: 'obr6' },                    
                 ],
-                blank: require('../assets/img/obrazok.jpg')
             }
         },
         methods: {
@@ -55,78 +62,29 @@ import TheSmallGallery from './gallery/TheSmallGallery'
                 if (this.value < this.images.length - 1) {
                     this.value++
                     mainImage.setAttribute('src', this.images[this.value].image)
-
-                    //moveRight(this.value, this.images, this.blank)
-                    //moveLeft(this.value, this.images, this.blank)
                 }
-
-                // set right image
-                /* function moveRight(value, images, blank) {
-                    const secondImage = document.getElementById('second')
-                    let right = value
-                    right++
-                    if (right < images.length ) {
-                        secondImage.setAttribute('src', images[right].image)
-                    } else {
-                        secondImage.setAttribute('src', blank)
-                    }
-                } */
-
-                // set left image
-                /* function moveLeft(value, images, blank) {
-                    const firstImage = document.getElementById('first')
-                    let left = value
-                    left--
-                    if (left >= 0 ) {
-                        firstImage.setAttribute('src', images[left].image)
-                    } else {
-                        firstImage.setAttribute('src', blank)
-                    }
-                } */
-
             },
             leftShift() {
                 const mainImage = document.getElementById('main')
                 
-
-                // set main (center) image
                 if (this.value > 0) {
                     this.value--
                     mainImage.setAttribute('src', this.images[this.value].image)
-
-                    //moveLeftRight(this.value, this.images, this.blank)
                 }
-
-                // set left and right image
-                /* function moveLeftRight(value, images, blank) {
-                    const firstImage = document.getElementById('first')
-                    const secondImage = document.getElementById('second')
-
-                    let left = value
-                    left--
-                    if (left >= 0) {
-                        firstImage.setAttribute('src', images[left].image)
-                        left += 2
-                        secondImage.setAttribute('src', images[left].image)
-                    } else {
-                        firstImage.setAttribute('src', blank)
-                        left += 2
-                        secondImage.setAttribute('src', images[left].image)
-                    }
-                } */
             },
         },
     }
 </script>
 
 <style lang="scss" scoped>
-@import '../main.scss';
+@import '../../main.scss';
 
 .images {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 50px;
+    transition: all .2s ease-in-out;
 }
 
 button {
@@ -147,8 +105,9 @@ button {
 }
 
 #main {
-    width: 90%;
+    //width: 90%;
     max-width: 37em;
+    max-height: 30em;
     transition: all 0.5s ease-in-out;
     border-radius: 10px;
     border: 7px solid $blue;
@@ -179,9 +138,14 @@ button {
     .images {
         margin-top: 1.5em;
     }
+    
     .zoomIn, .zoomOut {
         transition: none;
         transform: none;
+    }
+
+    #main {
+        max-width: 90%;
     }
 }
 

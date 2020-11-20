@@ -5,14 +5,33 @@
 
         <article class="aboutme" v-cloak>
 
-            <!-- <img src="../assets/profile.jpg" alt=""> -->
+            <img src="../assets/profile.jpg" alt=""> <br>
 
             <p class="text">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi neque, ipsa animi maiores repellendu distinctioaperiam earum dolor
-                voluptatum consequatur blanditiis inventore debitis fuga numquam voluptate architecto itaque molestiae.
-                <br><br>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi neque, ipsa animi maiores repellendu distinctioaperiam earum dolor
-                voluptatum consequatur blanditiis inventore debitis fuga numquam voluptate architecto itaque molestiae.
+                Hi, my name is Aďo and I am from the High Tatras (Poprad, Slovakia).
+                I studied at the <strong>Secondary Technical School</strong> in Poprad
+                (study program: <strong>Graphic Designer of Digital Media</strong>) and this study program consisted of <strong>two</strong> basic parts: <br>
+                1. website creation (HTML + CSS) <br>
+                2. graphic design (Adobe Photoshop, Illustrator, InDesign and others).
+            </p>
+            <p class="text">
+                <strong>Graphics</strong> and <strong>drawing</strong> are also among my hobbies and you can see some examples on the <router-link class="link" to="/gallery">gallery</router-link> subpage.
+                My other hobbies include playing guitar, football, tennis, volleyball and badminton.
+            </p>
+            <p class="text">
+                During the study at <strong>The Technical University of Košice</strong>, I focused mainly on <strong>5G networks</strong> and during the time I acquired my own first experiences with programming (in Python).
+                I became interested in programming and started learning to program in <strong>JavaScript</strong>, which led to the <strong>frontend</strong> again.
+                I have always been interested in graphics and in previous work I have gained a lot of experience with graphic design.
+            </p>
+            <p class="text">
+                At present, I am still trying to improve in this area and I am willing to continue my education and progress.
+                I tried to work in React, later I worked in Angular, but in the end I chose Vue.js.
+                Next I would like to learn how to program in <strong>PHP</strong> and in <strong>Laravel</strong>.
+            </p>
+            <p class="text">
+                At present, we are still trying to improve in this area and I am willing to continue my education and progress.
+                I very much appreciate the friendly approach of the company to the employee and providing him with space for his improvement
+                (for example in the form of courses) during which the employee will gain a lot of new experience.
             </p>
 
         </article>    
@@ -45,38 +64,44 @@ import TheTitle from '../components/TheTitle'
     width: 95%;
     max-width: 800px;
 }
-.introduction {
-    margin-top: 0;
-    font-weight: normal;
-}
+
 .aboutme {
-    display: inline-flex;
-    justify-content: center;
     height: auto;
     margin-top: 20px;
+
 }
 .text {
+    margin: 10px auto;
     color: $blue;
-    letter-spacing: 1px;
-    text-align: left;
+    letter-spacing: 0.2px;
+    text-align: justify;
+    line-height: 25px;
+    font-size: 17px;
+    width: 750px;
+}
+
+.link {
+    color: $blue;
+    text-decoration: none;
+    font-weight: bold;
+    color: $green;
 }
 
 img {
     width: 250px;
     margin: -20px 30px;
     clip-path: circle(40%);
+    float: right;
 }
 
 @media screen and (max-width: 593px) {
-    .about {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    img {
+        float: none;
     }
-    .aboutme {
-        display: inline;
-    }
-    .text {
-        margin: 0 30px 20px;
-        text-align: center;
+    
+    p {
+        max-width: 98%;
+        font-weight: 1em;
     }
 }
 </style>

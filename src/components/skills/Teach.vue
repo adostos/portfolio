@@ -4,13 +4,17 @@
           <span class="change">
                
                <transition name="fadein">
-                    <p class="motivstart" v-show="par == false">Lorem Ipsum is simply dummy text of the printistandard dummy text ever since the 1500s, when an a galley of type and scrambled it to make a type specimen book.</p>
+                    <p class="motivstart" v-show="par == false">
+                         None of the wise fell from heaven and everyone has to learn everything from scratch.
+                         Give a person a chance, time and space to improve and he will improve!
+                    </p>
                </transition>
 
 
                <transition name="fadeout" class="fadeout">
                     <p v-show="par" class="motiv">
-                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                         Great! You gave me a chance and the results came.<br>
+                         You helped me and now I can help you.
                     </p>
                </transition>
           </span>
@@ -42,9 +46,11 @@ import TeachButton from './TeachButton.vue'
 
 <style lang="scss" scoped>
 @import '../../main.scss';
+
 * {
      overflow: hidden;
 }
+
 .change {
      display: inline;
 }
@@ -54,6 +60,7 @@ import TeachButton from './TeachButton.vue'
      max-width: 500px;
      margin: 10px auto;
 }
+
 .motiv {
      width: 90%;
      max-width: 500px;
@@ -62,6 +69,7 @@ import TeachButton from './TeachButton.vue'
      transition: 0.5s ease-in;
      opacity: 1;
 }
+
 hr {
      margin: 0px auto;
      width: 90%;

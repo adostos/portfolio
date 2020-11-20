@@ -37,9 +37,11 @@ import CardGal from '../components/gallery/CardGal'
      margin: 10px;
      text-align: center;
 }
+
 ul {
      list-style: none;
 }
+
 img {
      display: inline-flex;
      justify-content: space-between;

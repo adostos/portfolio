@@ -7,7 +7,6 @@
             {{ title.description }}
         </p>
         <hr>
-        
     </div>
 </template>
 
@@ -31,9 +30,10 @@ h1 {
     //text-shadow: 1px 1px 1px $green;
 }
 
-p {
+.introduction {
     margin-bottom: 5px;
-    opacity: 70%;
+    opacity: 0;
+    color: $blue;
 }
 
 hr {

@@ -2,6 +2,9 @@
      <div>
           <the-title :title="titles" />
 
+          <h2>Email:</h2>
+          <input type="text" />
+
      </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
 	<div id="app">
-		<the-navigation />
+		<the-navigation v-if="!$route.meta.theNavigation" />
 		<router-view />
 	</div>
 </template>

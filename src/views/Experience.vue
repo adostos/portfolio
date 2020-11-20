@@ -3,7 +3,11 @@
           <the-title :title="titles" />
           <ul>
                <li>
-                    <experience-card v-for="(item, index) in jobs" :key="index" :item="item"></experience-card>
+                    <experience-card
+                         v-for="(item, index) in jobs"
+                         :key="index"
+                         :item="item"
+                    />
                </li>
           </ul>
           
@@ -19,7 +23,13 @@
                     <h2>Enter your company name:</h2>
 
                     <form action="#" @keydown.enter.prevent="addCompany">
-                         <input class="input-txt" type="text" placeholder="Company" v-model="company" ref="input" />
+                         <input
+                              class="input-txt"
+                              type="text"
+                              placeholder="Company"
+                              v-model="company"
+                              ref="input"
+                         />
                     </form>
                     
                     <em>Everyone can be better if they get a chance and space</em>
@@ -50,14 +60,14 @@ import TheTitle from '../components/TheTitle'
                          {
                               dateS: '05/2019',
                               dateE: '10/2019',
-                              where: 'POPRADSKÁ TLAČIAREŇ, VYDAVATEĽSTVO s. r. o.',
+                              where: 'POPRADSKÁ TLAČIAREŇ, VYDAVATEĽSTVO',
                               what: 'Creation of various graphic designs:',
                               section: 'newspapers, leaflets, brochures, business cards, banners, etc.'
                          },
                          {
                               dateS: '09/2013',
                               dateE: '05/2014',
-                              where: 'METALCOP, s.r.o.',
+                              where: 'METALCOP',
                               what: 'Creation of various graphic designs:',
                               section: 'graphic design and designs of aluminum prints, vectorization'
                          },

@@ -7,7 +7,7 @@
 		<router-link to="/experience">Experience</router-link>
 		<router-link to="/portfolio">Portfolio</router-link>
 		<router-link to="/gallery">Gallery</router-link>
-		<router-link to="/contact">Contact</router-link>
+		<!-- <router-link to="/contact">Contact</router-link> -->
 	</nav>
 </template>
 

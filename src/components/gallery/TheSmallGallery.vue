@@ -45,7 +45,8 @@ article {
 }
 
 img {
-    width: 6.5em;
+    max-width: 6.5em;
+    max-height: 5em;
     opacity: 0.7;
     transition: all .2s ease-in-out;
 

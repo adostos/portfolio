@@ -11,7 +11,7 @@ import Portfolio from "../views/Portfolio.vue";
 import Gallery from "../views/Gallery.vue";
 //import Contact from "../views/Contact.vue";
 
-import HelloWorld from "../components/HelloWorld.vue";
+//import HelloWorld from "../components/HelloWorld.vue";
 
 Vue.use(VueRouter);
 
@@ -20,13 +20,14 @@ const routes = [
         path: "/",
         name: "Home",
         component: Home,
-        children: [
+        meta: { theNavigation: true }
+        /* children: [
             {
                 path: '../components/HelloWorld.vue',
                 name: 'HelloWorld',
                 component: HelloWorld
             },
-        ]
+        ] */
     },
     {
         path: "/about",

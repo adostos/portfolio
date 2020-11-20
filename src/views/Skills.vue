@@ -2,9 +2,9 @@
      <div class="main animate__animated animate__fadeIn">
           <the-title :title="titles" />
           <ul>
-               <progress-bar-list :value="valuee"></progress-bar-list>
+               <progress-bar-list :value="valuee" />
           </ul>
-          <teach @improve-me="valuee = $event"></teach>
+          <teach @improve-me="valuee = $event" />
      </div>
 </template>
 
@@ -47,6 +47,10 @@ li {
 @media screen and (max-width: 593px) {
      li {
           margin: 10px auto;
+     }
+     
+     ul {
+          padding: 0;
      }
 }
 </style>

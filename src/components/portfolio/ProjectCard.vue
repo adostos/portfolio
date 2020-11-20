@@ -2,7 +2,9 @@
     <div class="portfolio animate__animated animate__fadeIn">
         <article>
             <aside>
-                <img :src="project.img" alt="">
+                <a :href="project.source" target="blank">
+                    <img :src="project.img" alt="">
+                </a>
             </aside>
             <span>
                 <h1>
@@ -56,9 +58,11 @@ img {
     width: 370px;
     margin: 25px;
 }
+
 h1 {
     margin-bottom: 0;
 }
+
 p {
     line-height: 1.7em;
     margin: 12px 0;
@@ -73,10 +77,21 @@ p {
     padding: 5px 10px;
     transition: all 0.3s ease-in-out;
     border-radius: 5px;
+    cursor: pointer;
     
     &:hover {
         background-color: $red;
         color: $white;
+    }
+}
+
+@media screen and (max-width: 593px) {
+    article {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    img {
+        width: 90%;
     }
 }
 </style>

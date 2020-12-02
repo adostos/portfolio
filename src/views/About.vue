@@ -36,8 +36,6 @@
             <p class="text">
                 Please feel free if you would like to have a chat:
                 <a class="link" href="mailto:ado19960@gmail.com">ado19960@gmail.com</a>.
-                <!-- and you can see my complete CV -->
-                <!-- <a class="link" href="./stosil-cv.pdf" target="blank" download>here</a>. -->
             </p>
 
         </article>    

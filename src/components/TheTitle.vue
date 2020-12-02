@@ -32,7 +32,7 @@ h1 {
 
 .introduction {
     margin-bottom: 5px;
-    opacity: 0;
+    opacity: 0.7;
     color: $blue;
 }
 

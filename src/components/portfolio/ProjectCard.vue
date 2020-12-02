@@ -92,6 +92,8 @@ p {
     }
     img {
         width: 90%;
+        margin-left: 0;
+        margin-right: 0;
     }
 }
 </style>

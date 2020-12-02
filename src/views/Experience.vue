@@ -53,7 +53,7 @@ import TheTitle from '../components/TheTitle'
                return {
                     titles: {
                          view: 'Work experience',
-                         description: 'My previous associations'
+                         description: 'My previous work experience'
                     },
                     company: '',
                     jobs: [

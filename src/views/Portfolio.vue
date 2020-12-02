@@ -26,7 +26,7 @@ import ProjectCard from '../components/portfolio/ProjectCard'
                     },
                     projects: [
                     {
-                        id: 1,
+                        id: 6,
                         name: 'API MARVEL App',
                         img: require("../assets/img/projects/project_marvel.jpg"),
                         source: 'https://adostos.github.io/app-marvelapi/#/',
@@ -37,7 +37,7 @@ import ProjectCard from '../components/portfolio/ProjectCard'
                         `
                     },
                     {
-                        id: 2,
+                        id: 5,
                         name: 'API iTunes App',
                         img: require("../assets/img/projects/project_itunes.jpg"),
                         source: 'https://adostos.github.io/itunesapp/#/',
@@ -48,19 +48,33 @@ import ProjectCard from '../components/portfolio/ProjectCard'
                         `
                     },
                     {
-                        id: 3,
+                        id: 4,
                         name: 'Snake Game',
                         img: require("../assets/img/projects/project_snake.jpg"),
                         source: 'https://adostos.github.io/snake-game/',
-                        description: `This is the popular snake game created using <strong>Javascript</strong>.
+                        description: `
+                            This is the popular snake game created using <strong>Javascript</strong>.
                             The game offers <strong>two basic modes</strong> (on/off walls) and <strong>three speed levels</strong>.<br>
                             Control is <strong>very simple</strong> (arrows) and to reset the game using the <strong>backspace</strong> or other key.
                             The game stores your <strong>record</strong>.
-                            I wish you a pleasant party 🙂`
+                            I wish you a pleasant party 🙂
+                        `
                         
                     },
                     {
-                        id: 4,
+                        id: 3,
+                        name: 'API Actual Weather',
+                        img: require("../assets/img/projects/project_weather.jpg"),
+                        source: 'https://adostos.github.io/actual-weather/',
+                        description: `
+                            App for <strong>actual weather</strong> for thousands of locations around the world created with <strong>Vue.js</strong>.
+                            Enter your <strong>city</strong> or <strong>country</strong> where you live, and immediately find out what the weather is like there.
+                            The application <strong>changes</strong> the background according to the <strong>current temperature</strong>.
+                        `
+                        
+                    },
+                    {
+                        id: 2,
                         name: 'Contact List',
                         img: require("../assets/img/projects/project_list.jpg"),
                         source: 'https://adostos.github.io/list_app_m/',
@@ -71,7 +85,7 @@ import ProjectCard from '../components/portfolio/ProjectCard'
                         `
                     },
                     {
-                        id: 5,
+                        id: 1,
                         name: 'Robofriends',
                         img: require("../assets/img/projects/project_robots.jpg"),
                         source: 'https://adostos.github.io/app_robots/',

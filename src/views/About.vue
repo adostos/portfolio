@@ -8,14 +8,15 @@
             <img src="../assets/profile.jpg" alt=""> <br>
 
             <p class="text">
-                Hi, my name is Aďo and I am from the High Tatras (Poprad, Slovakia).
+                Hi, my name is Adrián and I am from the High Tatras (Poprad, Slovakia).
                 I studied at the <strong>Secondary Technical School</strong> in Poprad
                 (study program: <strong>Graphic Designer of Digital Media</strong>) and this study program consisted of <strong>two</strong> basic parts: <br>
                 1. website creation (HTML + CSS) <br>
                 2. graphic design (Adobe Photoshop, Illustrator, InDesign and others).
             </p>
             <p class="text">
-                <strong>Graphics</strong> and <strong>drawing</strong> are also among my hobbies and you can see some examples on the <router-link class="link" to="/gallery">gallery</router-link> subpage.
+                <strong>Graphics</strong> and <strong>drawing</strong> are my favourite hobbies and you can see some of my works at my
+                <router-link class="link" to="/gallery">gallery</router-link>.
                 My other hobbies include playing guitar, football, tennis, volleyball and badminton.
             </p>
             <p class="text">
@@ -24,14 +25,19 @@
                 I have always been interested in graphics and in previous work I have gained a lot of experience with graphic design.
             </p>
             <p class="text">
-                At present, I am still trying to improve in this area and I am willing to continue my education and progress.
                 I tried to work in React, later I worked in Angular, but in the end I chose Vue.js.
-                Next I would like to learn how to program in <strong>PHP</strong> and in <strong>Laravel</strong>.
+                Next I would like to learn how to program in <strong>PHP</strong> and in web application framework <strong>Laravel</strong>.
             </p>
             <p class="text">
                 At present, we are still trying to improve in this area and I am willing to continue my education and progress.
                 I very much appreciate the friendly approach of the company to the employee and providing him with space for his improvement
                 (for example in the form of courses) during which the employee will gain a lot of new experience.
+            </p>
+            <p class="text">
+                Please feel free if you would like to have a chat:
+                <a class="link" href="mailto:ado19960@gmail.com">ado19960@gmail.com</a>.
+                <!-- and you can see my complete CV -->
+                <!-- <a class="link" href="./stosil-cv.pdf" target="blank" download>here</a>. -->
             </p>
 
         </article>    
@@ -48,9 +54,9 @@ import TheTitle from '../components/TheTitle'
         data() {
             return {
                 titles: {
-                         view: `About me`,
-                         description: 'A small introduction about my self'
-                    }
+                    view: `About me`,
+                    description: 'A small introduction about me'
+                },
             }
         }
     }
@@ -78,6 +84,7 @@ import TheTitle from '../components/TheTitle'
     line-height: 25px;
     font-size: 17px;
     width: 750px;
+    opacity: 0.9;
 }
 
 .link {

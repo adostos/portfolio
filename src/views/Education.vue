@@ -26,7 +26,7 @@ import TheTitle from '../components/TheTitle'
             return {
                 titles: {
                          view: 'Educations & Diplomas',
-                         description: 'What I have done in my academic career'
+                         description: 'What I have proved in my academic career'
                 },
                 schools: [
                     {

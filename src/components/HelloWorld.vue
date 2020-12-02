@@ -2,8 +2,8 @@
     <div class="hello animate__animated animate__fadeIn">
         <article>
             <p>Hi. My name is <span>{{ myname }}</span>.</p><br />
-            <p>I'm the Developer you need!</p><br />
-            <p>I LOVE what I do, so I work hard to do it well.</p>
+            <p>I'm the <strong>Developer</strong> which you need!</p><br />
+            <p>I <strong>LOVE</strong> what I do, so I work hard to do my <strong>best</strong>.</p>
         </article>
         <router-link to="/about">
             <button class="btn btn-2">Hire Me >></button>
